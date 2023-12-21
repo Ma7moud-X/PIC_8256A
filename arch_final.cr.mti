@@ -1,0 +1,22 @@
+D:/enginnering/fall23/arch/proj/ISR.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/ISR.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ISR
+
+Top level modules:
+	ISR
+
+} {} {}} D:/enginnering/fall23/arch/proj/Priority_Resolver.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/Priority_Resolver.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Priority_Resolver
+
+Top level modules:
+	Priority_Resolver
+
+} {} {}} D:/enginnering/fall23/arch/proj/IRR.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/IRR.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module IRR
+
+Top level modules:
+	IRR
+
+} {} {}}
