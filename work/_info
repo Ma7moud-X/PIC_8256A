@@ -4,22 +4,42 @@ K3
 cModel Technology
 Z0 dC:\altera\13.0sp1
 vIRR
-!i10b 1
-!s100 QX@UiiI`hzXBX9_ImddLE1
-I3<lQKHTfRRgC0K6AbX9PF2
-VXh?;n:7NRI5397nPBVSIJ1
-dD:\enginnering\fall23\arch\proj
-w1703161456
-8D:/enginnering/fall23/arch/proj/IRR.v
-FD:/enginnering/fall23/arch/proj/IRR.v
+Z1 I3<lQKHTfRRgC0K6AbX9PF2
+Z2 VXh?;n:7NRI5397nPBVSIJ1
+Z3 dD:\enginnering\fall23\arch\proj
+Z4 w1703161456
+Z5 8D:/enginnering/fall23/arch/proj/IRR.v
+Z6 FD:/enginnering/fall23/arch/proj/IRR.v
 L0 1
-OV;L;10.1d;51
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@i@r@r
+!i10b 1
+Z10 !s100 QX@UiiI`hzXBX9_ImddLE1
+!s85 0
+Z11 !s108 1703161720.995000
+Z12 !s107 D:/enginnering/fall23/arch/proj/IRR.v|
+Z13 !s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/IRR.v|
+!s101 -O0
+vISR
+!i10b 1
+Z14 !s100 0_JZbho>?KTV8ba9Jma7N1
+Z15 II[2MVkY_Z8HLSB@kMh:ga2
+Z16 VCl0eGRO8QokK4OIjERz=I0
+R3
+Z17 w1703161453
+Z18 8D:/enginnering/fall23/arch/proj/ISR.v
+Z19 FD:/enginnering/fall23/arch/proj/ISR.v
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1703161720.995000
-!s107 D:/enginnering/fall23/arch/proj/IRR.v|
-!s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/IRR.v|
+!s108 1703162264.987000
+!s107 D:/enginnering/fall23/arch/proj/ISR.v|
+Z20 !s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/ISR.v|
 !s101 -O0
-o-work work -O0
-n@i@r@r
+R8
+Z21 n@i@s@r
