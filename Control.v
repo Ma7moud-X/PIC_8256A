@@ -1,5 +1,3 @@
-
-
 module Control_Logic (
 	output reg INT, // to CPU
 	output reg [7:0] cur_Mask, // to IMR (OCW1) 
@@ -10,19 +8,21 @@ module Control_Logic (
 	output reg SNGL, // to Cascade if 1 sngl if 0 cascade
 	output reg LTIM, // TO IRR, 1 for level 0 for edge
 	output reg[7:0]  Ds_to_data,
-	output reg [1:0] BUFFERED_cur, // to Cascade ,             didn't handle it there yet, copy parameters
 	output reg INTA_1, // to priority_resolver to set the ist @ the first INTA
 	output reg INTA_FREEZE, //TO IRR duingthe INTA
 	output reg ISR_DONE, // to isr duign AEOI @ the end of second INTA
 	output reg [2:0] EOI_and_Rotate, // to resolver ans ISR to enable rotate if needed
   
-    input wire n, // from resolver to handel the rotating
+  input wire [2:0] ID, // from Cascade to compare in case of slave
+  input wire Master_Slave, // from Cascade
+  input wire NO_ICW4, // from read write to set the default if no ICW4
+  input wire n, // from resolver to handel the rotating
 	input wire INTA, // from CPU
 	input wire [2:0] WR_cur, // from Read_Write_logic
 	input wire [7:0] Ds, // Ds from data_bus
 	input wire[7:0]  IRR_resolver, // from Resolver
 	input wire[7:0] IRR,// from IRR
-    input wire[7:0]  ISR,  // form ISR 	
+  input wire[7:0]  ISR,  // form ISR 	
 	input wire RD_flag   // from data
 
 );
@@ -30,6 +30,10 @@ module Control_Logic (
     reg RD_cur,EOI_cur;
 	reg INTA_NUM;
     reg [7:0]priorityVector [7:0];
+	reg [1:0] BUFFERED_cur;
+	reg [2:0] My_ID; // from ICW3, My id as a slave
+	reg [7:0] IR_Cascade;
+
 
 	parameter aeoi = 1'b1, eoi = 1'b0;
 	parameter irr = 1'b0, isr = 1'b1; // what RD read
@@ -65,7 +69,7 @@ module Control_Logic (
 			// i'm testing with 30 nano second between steps so i will make the wait to be around 100 nanosecond may change after the test
 			if(EOI_and_Rotate == NON_SPECIFIC_EOI || Higher) begin
 				INT = 1'b0;
-				#3000; // wait for 3 nano then rise the INT to handle the next request 
+				#1500; // wait for 1.5 nano then rise the INT to handle the next request 
 				////////////////////////////////////////////////////////////////
 				//   We should use a clk for the delay but i couldn't do it   // 
 				///////////////////////////////////////////////////////////////
@@ -80,18 +84,29 @@ module Control_Logic (
     
 	// handle EOI and AEOI then continue here
    always @(INTA or EOI_and_Rotate) begin
+	
+	 
      if(INTA == 1'b1) begin
         if(INTA_NUM == 1'b0) begin
           INTA_FREEZE = 1'b1;
 			INTA_NUM = 1'b1;
 			INTA_1 = 1'b1;
 		
-		end else if (INTA_NUM == 1'b1) begin
+		end else if (INTA_NUM == 1'b1 && SNGL ) begin // SNGL
+			INTA_NUM = 1'b0;
+			Ds_to_data = priorityVector[ISR];
+		end else if (INTA_NUM == 1'b1 && Master_Slave ) begin // Master
+			INTA_NUM = 1'b0;
+			if(!IR_Cascade[ISR])// if the interrupt we are working on is a slave don't send any thing to data the slave will do it, if it's I/O device send the address
+				Ds_to_data = priorityVector[ISR];
+		end
+		else if (INTA_NUM == 1'b1 && ID == My_ID ) begin // Slave
 			INTA_NUM = 1'b0;
 			Ds_to_data = priorityVector[ISR];
 		end
+		
 		end
-		else begin // end of INT
+		else if(INTA == 1'b0 && INTA_NUM == 1'b0) begin // end of INT
 		  if(aeoi) begin
 			ISR_DONE = ISR;
 		  end else if( eoi && EOI_and_Rotate == NON_SPECIFIC_EOI )begin
@@ -126,6 +141,10 @@ module Control_Logic (
 						SNGL = Ds[1];
 						LTIM = Ds[3];
 						INTA_NUM = 1'b0;
+						if(NO_ICW4)begin
+							BUFFERED_cur = NON_BUFFERED;
+							EOI_cur = eoi;
+						end
 				end
 			ICW2 :
 			     begin
@@ -141,16 +160,15 @@ module Control_Logic (
   
 
 					
-			//ICW3 :
-					
-					// ICW3 code
-//					two modes :    master : when SP = 1 or in buffered mode when M/S = 1 in ICW4
-//				
-//					  a 1 is set for each slave in the system then the master will release byte 1 of the call sequence and will enable the slave to release byte 2 through the cascade lines
-//					  
-//					  slave : SP = 0 or in buffered mode M/S = 0 in ICW4 (bits 2-0 identify the slave.
-//					  it compares its cascade input with these bits and if they are equal bytes 2 are released
-//					  // the master send the id if (2-0 bits "it's id") equal to what master send it release 2				
+			ICW3 :
+					begin
+						 
+						if(Master_Slave == 1'b1)  // Master
+							IR_Cascade = Ds;
+						 else                     // Slave
+							My_ID = Ds[2:0];
+					end
+				
 					
 			ICW4 :
 			begin
@@ -159,6 +177,7 @@ module Control_Logic (
 					else 
 						EOI_cur = eoi;
 						
+					// we are not supporting buffered mode but just for reference
 					if(!Ds[3])
 						BUFFERED_cur = NON_BUFFERED;
 					else if(Ds[3] && Ds[2])
@@ -186,6 +205,8 @@ module Control_Logic (
 	end
 
 endmodule
+
+
 
 
 
