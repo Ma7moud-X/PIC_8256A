@@ -1,50 +1,23 @@
-C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v
+D:/enginnering/fall23/arch/proj/ISR.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/ISR.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module ISR
 
 Top level modules:
 	ISR
 
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v
+} {} {}} D:/enginnering/fall23/arch/proj/Priority_Resolver.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/Priority_Resolver.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module Priority_Resolver
 
 Top level modules:
 	Priority_Resolver
 
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Read_Write_Logic
-
-Top level modules:
-	Read_Write_Logic
-
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Data_bus
-
-Top level modules:
-	Data_bus
-
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module IMR
-
-Top level modules:
-	IMR
-
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Control_Logic
-
-Top level modules:
-	Control_Logic
-
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v
+} {} {}} D:/enginnering/fall23/arch/proj/IRR.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/IRR.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module IRR
+-- Compiling module IRR_tb
 
 Top level modules:
-	IRR
+	IRR_tb
 
 } {} {}}

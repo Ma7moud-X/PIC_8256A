@@ -32,6 +32,7 @@ module Priority_Resolver (
 		IRR_MASKED = 8'b0;
 		ISR_IRR = 8'b10000000;
 		shift = 0;
+		n = 0;
      end
     end
 
@@ -65,3 +66,6 @@ module Priority_Resolver (
     end
     
 endmodule
+
+
+

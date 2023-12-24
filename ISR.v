@@ -1,3 +1,5 @@
+
+
 module ISR (
 		input wire [7:0] ISR,// from resolver
 		input wire ISR_reset, // from control to set CUR = 0
@@ -5,7 +7,7 @@ module ISR (
 		input wire [2:0] n, // from resolver to handel the rotating
 		input wire [2:0] rotate, // from control logic
 		
-		output reg  [2:0]ISR_Control, // to control logic
+		output reg  [2:0]ISR_Control, // to control logic and to Cascade
 		output reg  [7:0] ISR_cur // to control for reading
 );
 
@@ -57,3 +59,5 @@ module ISR (
     else ISR_Control = ((7+shift)%8);
   end
 endmodule 
+
+ 
