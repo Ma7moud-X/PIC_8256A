@@ -5,9 +5,10 @@ module IMR (
 	output reg[7:0]  IMR  // To priority resolver 	
 
 );
-  always @(MASK_reset) begin
-    IMR = 8'b0; 
-  end
+    always @(MASK_reset) begin
+      if(MASK_reset)
+        IMR = 8'b0; 
+    end
   
 	always @(cur_MASK) begin
 		IMR = cur_MASK;
