@@ -1,8 +1,1 @@
-D:/enginnering/fall23/arch/proj/ISR.v {1 {vlog -work work D:/enginnering/fall23/arch/proj/ISR.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ISR
 
-Top level modules:
-	ISR
-
-} {} {}}

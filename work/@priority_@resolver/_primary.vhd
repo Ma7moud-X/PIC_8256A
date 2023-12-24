@@ -12,10 +12,9 @@ entity Priority_Resolver is
         IMR             : in     vl_logic_vector(7 downto 0);
         INTA_1          : in     vl_logic;
         Rotate          : in     vl_logic_vector(2 downto 0);
-        n               : out    vl_logic;
-        ISR             : out    vl_logic_vector(7 downto 0);
-        IRR_MASK        : out    vl_logic_vector(7 downto 0);
-        IRR_INTA_1      : out    vl_logic_vector(7 downto 0)
+        n               : out    vl_logic_vector(2 downto 0);
+        ISR_IRR         : out    vl_logic_vector(7 downto 0);
+        IRR_MASKED      : out    vl_logic_vector(7 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of ROTATE_NON_SPECIFIC_EOI : constant is 1;
