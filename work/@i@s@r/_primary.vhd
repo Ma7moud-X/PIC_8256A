@@ -9,10 +9,11 @@ entity ISR is
     port(
         ISR             : in     vl_logic_vector(7 downto 0);
         ISR_reset       : in     vl_logic;
-        ISR_DONE        : in     vl_logic;
-        n               : in     vl_logic;
+        ISR_DONE        : in     vl_logic_vector(2 downto 0);
+        n               : in     vl_logic_vector(2 downto 0);
         rotate          : in     vl_logic_vector(2 downto 0);
-        ISR_Control     : out    vl_logic
+        ISR_Control     : out    vl_logic_vector(2 downto 0);
+        ISR_cur         : out    vl_logic_vector(7 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of ROTATE_NON_SPECIFIC_EOI : constant is 1;

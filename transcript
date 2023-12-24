@@ -1,15 +1,4 @@
-# Error opening D:/enginnering/fall23/arch/proj/Priority_Resolver.v
-# Path name 'D:/enginnering/fall23/arch/proj/Priority_Resolver.v' doesn't exist.
-# Error opening D:/enginnering/fall23/arch/proj/ISR.v
-# Path name 'D:/enginnering/fall23/arch/proj/ISR.v' doesn't exist.
-# Error opening D:/enginnering/fall23/arch/proj/Priority_Resolver.v
-# Path name 'D:/enginnering/fall23/arch/proj/Priority_Resolver.v' doesn't exist.
-# Error opening D:/enginnering/fall23/arch/proj/IRR.v
-# Path name 'D:/enginnering/fall23/arch/proj/IRR.v' doesn't exist.
 # Compile of ISR.v was successful.
-# Compile of Read_Write_Logic.v was successful.
-# Compile of Priority_Resolver.v was successful.
-# Compile of Data_Bus.v was successful.
-# Compile of IMR.v was successful.
 # Compile of IRR.v was successful.
+# Compile of Priority_Resolver.v was successful.
 # Compile of Control.v was successful.
