@@ -32,11 +32,13 @@ entity Control_Logic is
         SNGL            : out    vl_logic;
         LTIM            : out    vl_logic;
         Ds_to_data      : out    vl_logic_vector(7 downto 0);
-        BUFFERED_cur    : out    vl_logic_vector(1 downto 0);
         INTA_1          : out    vl_logic;
         INTA_FREEZE     : out    vl_logic;
         ISR_DONE        : out    vl_logic;
         EOI_and_Rotate  : out    vl_logic_vector(2 downto 0);
+        ID              : in     vl_logic_vector(2 downto 0);
+        Master_Slave    : in     vl_logic;
+        NO_ICW4         : in     vl_logic;
         n               : in     vl_logic;
         INTA            : in     vl_logic;
         WR_cur          : in     vl_logic_vector(2 downto 0);
