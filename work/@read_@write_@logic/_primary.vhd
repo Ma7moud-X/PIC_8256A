@@ -19,6 +19,7 @@ entity Read_Write_Logic is
         A0              : in     vl_logic;
         CS              : in     vl_logic;
         Ds              : in     vl_logic_vector(7 downto 0);
+        NO_ICW4         : out    vl_logic;
         WR_cur          : out    vl_logic_vector(2 downto 0);
         RD_flag         : out    vl_logic;
         WR_flag         : out    vl_logic

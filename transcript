@@ -1,1 +1,10 @@
+# Reading D:/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/arch_final.mpf 
+# Loading project arch_final
+# Compile of ISR.v was successful.
+# Compile of Data_Bus.v was successful.
+# Compile of Priority_Resolver.v was successful.
+# Compile of Read_Write_Logic.v was successful.
+# Compile of IMR.v was successful.
+# Compile of IRR.v was successful.
 # Compile of Control.v was successful with warnings.
