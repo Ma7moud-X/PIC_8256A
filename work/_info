@@ -4,162 +4,142 @@ K3
 cModel Technology
 Z0 dC:\altera\13.0sp1
 vControl_Logic
-Z1 IVDOJR>n>kJBkBY:]`Z8MH3
-Z2 V[7Md:=K_:zkCR:MXXM=cb2
-Z3 dC:\Users\MAHMOUD\Desktop\Project\PIC_8256A
-Z4 w1703415215
-Z5 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
-Z6 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
-L0 1
-Z7 OV;L;10.1d;51
-r1
-31
-Z8 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v|
-Z9 o-work work -O0
-Z10 n@control_@logic
-Z11 !s100 hX<2HAfNl7nVzn>;fL6dL2
-Z12 !s108 1703415406.358000
-Z13 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v|
 !i10b 1
+!s100 hX<2HAfNl7nVzn>;fL6dL2
+IVDOJR>n>kJBkBY:]`Z8MH3
+V[7Md:=K_:zkCR:MXXM=cb2
+Z1 dC:\Users\MAHMOUD\Desktop\Project\PIC_8256A
+w1703415215
+Z2 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
+Z3 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
+L0 1
+Z4 OV;L;10.1d;51
+r1
 !s85 0
+31
+!s108 1703415406.358000
+!s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v|
+Z5 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v|
 !s101 -O0
+Z6 o-work work -O0
+Z7 n@control_@logic
 vData_bus
-Z14 I=;5?FFGB0M8V<0TKm[cFU3
-Z15 VWSkaE=7<Yc0n^<<7iil<c2
-R3
-Z16 w1703320056
-Z17 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
-Z18 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
+Z8 I=;5?FFGB0M8V<0TKm[cFU3
+Z9 VWSkaE=7<Yc0n^<<7iil<c2
+R1
+Z10 w1703320056
+Z11 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
+Z12 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
 L0 2
-R7
+R4
 r1
 31
-R9
-Z19 n@data_bus
-Z20 !s100 cSaMJ3>8IQIDAM1;<li8T1
-Z21 !s108 1703323158.940000
-Z22 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v|
-Z23 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v|
+R6
+Z13 n@data_bus
+Z14 !s100 cSaMJ3>8IQIDAM1;<li8T1
+Z15 !s108 1703323158.940000
+Z16 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v|
+Z17 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vIMR
-Z24 IV1<hfin;ijOn_63FoA[:a0
-Z25 VheG_fBHTUHQVmdnZa^dN;2
-R3
-R16
-Z26 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
-Z27 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
+Z18 IV1<hfin;ijOn_63FoA[:a0
+Z19 VheG_fBHTUHQVmdnZa^dN;2
+R1
+R10
+Z20 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
+Z21 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
 L0 1
-R7
+R4
 r1
 31
-R9
-Z28 n@i@m@r
-Z29 !s100 Z8h:0aGTUzf]AB9Jzg<FF1
-Z30 !s108 1703323161.663000
-Z31 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v|
-Z32 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v|
+R6
+Z22 n@i@m@r
+Z23 !s100 Z8h:0aGTUzf]AB9Jzg<FF1
+Z24 !s108 1703323161.663000
+Z25 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v|
+Z26 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vIRR
-Z33 Imn]jg6A3X=]dcgzY:<=K^3
-Z34 VSQ?a_5X1gi[8ICYRb=W7J1
-Z35 dD:\enginnering\fall23\arch\proj
-Z36 w1703444774
-Z37 8D:/enginnering/fall23/arch/proj/IRR.v
-Z38 FD:/enginnering/fall23/arch/proj/IRR.v
+Z27 I^?:VTN>37i[QWWJAC>Cgo0
+Z28 VSQ?a_5X1gi[8ICYRb=W7J1
+R1
+Z29 w1703415380
+Z30 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v
+Z31 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v
 L0 2
-R7
+R4
 r1
 31
-Z39 !s108 1703444862.168000
-Z40 !s107 D:/enginnering/fall23/arch/proj/IRR.v|
-Z41 !s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/IRR.v|
-R9
-Z42 n@i@r@r
-Z43 !s100 P]9fZP9H9LO]JzN:mG>cL2
-!i10b 1
-!s85 0
-!s101 -O0
-vIRR_tb
-Z44 Il302LnlI515a_VfnS8WD82
-Z45 VcOkDJTER_2@9@7BbjTUOD3
-R35
-R36
-R37
-R38
-L0 49
-R7
-r1
-31
-R39
-R40
-R41
-R9
-Z46 n@i@r@r_tb
-Z47 !s100 zQT4l>a9o3[Mk@eXD2G;X3
+Z32 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v|
+R6
+Z33 n@i@r@r
+Z34 !s100 ^FBnfi6KXHR9lJIPIkcTV0
+Z35 !s108 1703415382.391000
+Z36 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vISR
-Z48 IoIfH8f4mQQlGJ2Amb?bmQ0
-Z49 VJ>CgE6K^W09AU9SPnc64b1
-R35
-Z50 w1703444800
-Z51 8D:/enginnering/fall23/arch/proj/ISR.v
-Z52 FD:/enginnering/fall23/arch/proj/ISR.v
-L0 3
-R7
+Z37 I327Y=0i>UCHo2>O2NUzSc1
+Z38 VJ>CgE6K^W09AU9SPnc64b1
+R1
+Z39 w1703415365
+Z40 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v
+Z41 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v
+L0 1
+R4
 r1
 31
-R9
-Z53 n@i@s@r
+Z42 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v|
+R6
+Z43 n@i@s@r
+Z44 !s100 ``?[WnUNi`nzaV4Fjdcmg0
+Z45 !s108 1703415367.009000
+Z46 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/ISR.v|
 !i10b 1
-Z54 !s100 nJz1_oVNXMR1QBU]TGlCC2
 !s85 0
-Z55 !s108 1703444867.637000
-Z56 !s107 D:/enginnering/fall23/arch/proj/ISR.v|
-Z57 !s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/ISR.v|
 !s101 -O0
 vPriority_Resolver
-!i10b 1
-!s100 CKe7]lzHQWHU`W@AgU41h2
-IWUG_[z^o5GQ:C:VSBY:AH3
-Z58 VC@BFV;o5D]b?:Ojlc3Om?1
-R35
-w1703444786
-8D:/enginnering/fall23/arch/proj/Priority_Resolver.v
-FD:/enginnering/fall23/arch/proj/Priority_Resolver.v
+Z47 IdcRg8UD[BGnXgbOzmc1k12
+Z48 VC@BFV;o5D]b?:Ojlc3Om?1
+R1
+Z49 w1703415400
+Z50 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v
+Z51 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v
 L0 3
-R7
+R4
 r1
+31
+Z52 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v|
+R6
+Z53 n@priority_@resolver
+!i10b 1
+Z54 !s100 :<j;A<2:0j3RGOMUIeJS13
 !s85 0
-31
-!s108 1703444869.981000
-!s107 D:/enginnering/fall23/arch/proj/Priority_Resolver.v|
-!s90 -reportprogress|300|-work|work|D:/enginnering/fall23/arch/proj/Priority_Resolver.v|
+Z55 !s108 1703415402.484000
+Z56 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v|
 !s101 -O0
-R9
-Z59 n@priority_@resolver
 vRead_Write_Logic
-Z60 I2LZXQYeYT[kF[MK5lh[:o2
-Z61 V9o6zehn``@1:]31SXB9MK3
-R3
-Z62 w1703251152
-Z63 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
-Z64 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
+Z57 I2LZXQYeYT[kF[MK5lh[:o2
+Z58 V9o6zehn``@1:]31SXB9MK3
+R1
+Z59 w1703251152
+Z60 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
+Z61 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
 L0 2
-R7
+R4
 r1
 31
-R9
-Z65 n@read_@write_@logic
-Z66 !s100 V5Uz_hYO7aLS8T^RXBC@a0
-Z67 !s108 1703323153.522000
-Z68 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v|
-Z69 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v|
+R6
+Z62 n@read_@write_@logic
+Z63 !s100 V5Uz_hYO7aLS8T^RXBC@a0
+Z64 !s108 1703323153.522000
+Z65 !s107 C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v|
+Z66 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v|
 !i10b 1
 !s85 0
 !s101 -O0
