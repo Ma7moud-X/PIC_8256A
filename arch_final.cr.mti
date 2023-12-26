@@ -5,12 +5,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	ISR
 
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v
+} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Priority_Resolver
+-- Compiling module Data_bus
 
 Top level modules:
-	Priority_Resolver
+	Data_bus
 
 } {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Read_Write_Logic.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -19,12 +19,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	Read_Write_Logic
 
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Data_Bus.v
+} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Priority_Resolver.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Data_bus
+-- Compiling module Priority_Resolver
 
 Top level modules:
-	Data_bus
+	Priority_Resolver
 
 } {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IMR.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -33,12 +33,15 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	IMR
 
-} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
+} {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v {2 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module Control_Logic
+-- Compiling module Control_Logic_tb
+** Warning: C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Control.v(334): (vlog-2643) Unterminated string literal continues onto next line.
+
 
 Top level modules:
-	Control_Logic
+	Control_Logic_tb
 
 } {} {}} C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v {1 {vlog -work work C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/IRR.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012

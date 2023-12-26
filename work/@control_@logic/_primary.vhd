@@ -25,27 +25,28 @@ entity Control_Logic is
     port(
         INT             : out    vl_logic;
         cur_Mask        : out    vl_logic_vector(7 downto 0);
+        Ds_to_data      : out    vl_logic_vector(7 downto 0);
+        ISR_DONE        : out    vl_logic_vector(2 downto 0);
+        EOI_and_Rotate  : out    vl_logic_vector(2 downto 0);
         Mask_reset      : out    vl_logic;
         ISR_reset       : out    vl_logic;
         IRR_reset       : out    vl_logic;
         Cascade_reset   : out    vl_logic;
         SNGL            : out    vl_logic;
         LTIM            : out    vl_logic;
-        Ds_to_data      : out    vl_logic_vector(7 downto 0);
         INTA_1          : out    vl_logic;
         INTA_FREEZE     : out    vl_logic;
-        ISR_DONE        : out    vl_logic;
-        EOI_and_Rotate  : out    vl_logic_vector(2 downto 0);
         ID              : in     vl_logic_vector(2 downto 0);
-        Master_Slave    : in     vl_logic;
-        NO_ICW4         : in     vl_logic;
-        n               : in     vl_logic;
-        INTA            : in     vl_logic;
+        n               : in     vl_logic_vector(2 downto 0);
         WR_cur          : in     vl_logic_vector(2 downto 0);
+        \ISR\           : in     vl_logic_vector(2 downto 0);
         Ds              : in     vl_logic_vector(7 downto 0);
         IRR_resolver    : in     vl_logic_vector(7 downto 0);
         \IRR\           : in     vl_logic_vector(7 downto 0);
-        \ISR\           : in     vl_logic_vector(7 downto 0);
+        ISR_READ        : in     vl_logic_vector(7 downto 0);
+        Master_Slave    : in     vl_logic;
+        NO_ICW4         : in     vl_logic;
+        INTA            : in     vl_logic;
         RD_flag         : in     vl_logic
     );
     attribute mti_svvh_generic_type : integer;
