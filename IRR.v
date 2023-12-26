@@ -42,3 +42,101 @@ module IRR (
     end
 	
 endmodule
+
+
+
+
+module IRR_tb();
+
+	reg [7:0]IRR;
+	reg LTIM;
+	reg IRR_reset;
+	reg INTA_FREEZE;
+	reg [7:0]INTA_1;
+	
+	wire [7:0] IRR_control;
+	wire [7:0] IRR_priority;
+	
+IRR test (
+		// input
+		.IRR(IRR),
+		.LTIM(LTIM),
+		.IRR_reset(IRR_reset),
+		.INTA_FREEZE(INTA_FREEZE),
+		.INTA_1(INTA_1),
+		// output
+		.IRR_control(IRR_control),
+		.IRR_priority(IRR_priority)
+);
+
+initial begin
+    IRR_reset = 1'b1;
+	LTIM = 1'b1;
+	INTA_FREEZE = 1'b0;
+    #1000; // 1 nano
+    
+	// Level & Edge
+    IRR_reset = 1'b0;
+	LTIM = 1'b1; // level
+	IRR = 8'b11111111;
+    #1000;
+        
+	LTIM = 1'b1; // level
+	IRR = 8'b00001111;
+    #1000;
+    
+	LTIM = 1'b1; // level
+	IRR = 8'b11110000;
+    #1000;
+       
+	LTIM = 1'b0; // edge
+	IRR = 8'b00000000;
+    #1000;
+    
+	LTIM = 1'b0; // edge
+	IRR = 8'b11110000;
+    #1000;
+    
+	LTIM = 1'b0; // edge
+	IRR = 8'b11000000;
+    #1000;
+	
+	//INTA_1 .. set the bit we are handling now
+	LTIM = 1'b1; // level
+	IRR = 8'b11111100;
+	#1000;
+	
+	LTIM = 1'b1; // level
+	IRR = 8'b00000000;
+	INTA_1 = 8'b11110000;
+	#1000;
+	
+	
+	// Freeze
+	INTA_FREEZE = 1'b1;
+	LTIM = 1'b1; // level
+	IRR = 8'b11111111;
+	#1000;
+	
+	INTA_FREEZE = 1'b1;
+	LTIM = 1'b1; // level
+	IRR = 8'b00001111;
+	#1000;
+	
+
+    $finish;
+end
+
+initial begin
+    $monitor("Time: %t, reset: %b, LTIM: %b, INTA_FREEZE: %b      IRR: %b %b %b %b %b %b %b %b,      IRR_control: %b %b %b %b %b %b %b %b", $time,IRR_reset,LTIM,INTA_FREEZE,IRR[7],IRR[6],IRR[5],IRR[4],IRR[3],IRR[2],IRR[1],IRR[0] ,IRR_control[7],IRR_control[6],IRR_control[5],IRR_control[4],IRR_control[3],IRR_control[2],IRR_control[1],IRR_control[0]);
+    $timeformat(-9, 1, " ns", 10);
+end
+
+endmodule	
+
+
+
+
+
+
+
