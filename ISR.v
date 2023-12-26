@@ -61,3 +61,80 @@ module ISR (
 endmodule 
 
  
+
+module ISR_tb();
+
+	// input
+	reg [7:0] ISR;
+	reg ISR_reset;
+	reg [2:0] ISR_DONE;
+	reg [2:0] n;
+	reg [2:0] rotate;
+
+	// output
+	wire [7:0] ISR_cur;
+	wire [2:0] ISR_Control;
+	
+ISR test (
+		// input
+		.ISR(ISR),
+		.ISR_reset(ISR_reset),
+		.ISR_DONE(ISR_DONE),
+		.n(n),
+		.rotate(rotate),
+		// output
+		.ISR_cur(ISR_cur),
+		.ISR_Control(ISR_Control)
+);
+
+
+
+initial begin
+    ISR_reset = 1'b1;
+	ISR = 8'b0;
+    #1000; // 1 nano
+    
+	// MASKING IRR
+    ISR_reset = 1'b0;
+	ISR = 8'b00000110;
+	n = 3'b000;
+    #1000;
+        
+	// Second INTA
+	ISR_DONE = 3'b001;
+    #1000;
+    
+	
+	// Rotate
+	ISR = 8'b00011100;
+	n = 3'b011;
+	rotate = 3'b100;
+    #1000;
+       
+	// Don't clear
+	ISR_DONE = 3'b011;
+	n = 3'b100;
+    #1000;
+
+    $finish;
+end
+
+initial begin
+    $monitor("Time: %t, ISR_reset: %b,    ISR: %b %b %b %b %b %b %b %b,    ISR_DONE: %b %b %b,   N: %b %b %b,   Rotate: %b %b %b,    OUTPUT    ISR_cur: %b %b %b %b %b %b %b %b,    ISR_Control: %b %b %b",
+    $time,ISR_reset,ISR[7],ISR[6],ISR[5],ISR[4],ISR[3],ISR[2],ISR[1],ISR[0],ISR_DONE[2],ISR_DONE[1],ISR_DONE[0],n[2],n[1],n[0],rotate[2],rotate[1],rotate[0],
+    ISR_cur[7],ISR_cur[6],ISR_cur[5],ISR_cur[4],ISR_cur[3],ISR_cur[2],ISR_cur[1],ISR_cur[0],ISR_Control[2],ISR_Control[1],ISR_Control[0]);
+
+    $timeformat(-9, 1, " ns", 10);
+end
+
+endmodule	
+	
+
+
+
+
+
+
+
+
+
