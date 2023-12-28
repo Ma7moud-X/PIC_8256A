@@ -67,5 +67,71 @@ module Priority_Resolver (
     
 endmodule
 
+module Priority_Resolver_tb();
 
+	reg [7:0]IRR;
+	reg [7:0]IMR;
+	reg [2:0]Rotate;
+	reg IRR_reset;
+	reg INTA_1;
+	
+	wire [7:0] ISR_IRR;
+	wire [7:0] IRR_MASKED;
+	wire [2:0]n;
+	
+Priority_Resolver test (
+		// input
+		.IRR(IRR),
+		.IMR(IMR),
+		.Rotate(Rotate),
+		.IRR_reset(IRR_reset),
+		.INTA_1(INTA_1),
+		// output
+		.ISR_IRR(ISR_IRR),
+		.IRR_MASKED(IRR_MASKED),
+		.n(n)
+);
+
+initial begin
+    IRR_reset = 1'b1;
+	IRR = 8'b0;
+	IMR = 8'b0;
+	INTA_1=1'b0;
+    #1000; // 1 nano
+    
+	// MASKING IRR
+    IRR_reset = 1'b0;
+	IRR = 8'b11110000;
+	IMR = 8'b11000000;
+    #1000;
+        
+	// First INTA
+	INTA_1 = 1'b1;
+	IRR = 8'b11110000;
+	IMR = 8'b10000000;
+    #1000;
+    
+	INTA_1 = 1'b0;
+    #1000;
+       
+	// Rotate
+	Rotate = 3'b100;
+    #1000;
+    
+    INTA_1 = 1'b1;
+    IRR = 8'b01110000;
+    #1000
+
+    $finish;
+end
+
+initial begin
+    $monitor("Time: %t, reset: %b, INTA_1: %b,    IRR: %b %b %b %b %b %b %b %b,    IMR: %b %b %b %b %b %b %b %b,    Rotate: %b %b %b    OUTPUT   n: %d %d %d,    ISR_IRR: %b %b %b %b %b %b %b %b,    IRR_MASKED: %b %b %b %b %b %b %b %b",
+    $time,IRR_reset,INTA_1,IRR[7],IRR[6],IRR[5],IRR[4],IRR[3],IRR[2],IRR[1],IRR[0] ,IMR[7],IMR[6],IMR[5],IMR[4],IMR[3],IMR[2],IMR[1],IMR[0],Rotate[2],Rotate[1],Rotate[0],
+    n[2],n[1],n[0],ISR_IRR[7],ISR_IRR[6],ISR_IRR[5],ISR_IRR[4],ISR_IRR[3],ISR_IRR[2],ISR_IRR[1],ISR_IRR[0],IRR_MASKED[7],IRR_MASKED[6],IRR_MASKED[5],IRR_MASKED[4],IRR_MASKED[3],IRR_MASKED[2],IRR_MASKED[1],IRR_MASKED[0]);
+
+    $timeformat(-9, 1, " ns", 10);
+end
+
+endmodule
 
