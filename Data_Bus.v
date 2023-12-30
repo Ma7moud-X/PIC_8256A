@@ -29,6 +29,21 @@ module Data_bus (
 endmodule
 
 
+module Data_bus_tb();
+
+	reg RD_flag;
+	reg WR_flag;
+	reg [7:0] Ds_from_control;
+	
+	wire [7:0] Ds;
+	//reg [7:0] Ds_IN;
+	//wire [7:0] Ds_OUT;
+	
+	// No need for Ds_to_W_R as it = Ds_from_control
+	wire [7:0] Ds_to_Control;
+	wire RD_flag_control;
+
+
 Data_bus test (
 				.RD_flag(RD_flag),
 				.WR_flag(WR_flag),
