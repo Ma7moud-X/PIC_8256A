@@ -1,11 +1,11 @@
-  `include "IRR.v";
+    `include "IRR.v";
 	`include "Priority_Resolver.v";
 	`include "ISR.v";
 	`include "IMR.v";
 	`include "Control.v";
 	`include "Read_Write_Logic.v";
 	`include "Data_Bus.v";
-	`include "Cascade_Buffer_Comparator.v";
+	`include "Cascade.v";
 
 
 	module TOP (
@@ -15,12 +15,10 @@
 		  input reg A0,
 		  input reg [7:0] IR,
 		  input reg INTA,
-		  input reg [7:0]D_IN,
-		  input reg [2:0] CAS_IN,
 		  input reg SP_EN,
 		  
-		  output wire [7:0] D_OUT,
-		  output wire [2:0] CAS_OUT,
+		  inout wire [7:0] D,
+		  inout wire [2:0] CAS,
 		  output wire INT
 	);
 
@@ -77,12 +75,12 @@
 	Cascade_Buffer Cascade_Buffer_1(
 		// input
 		.Cascade_reset(Cascade_reset),
-		.CAS_IN(CAS_IN),
 		.ISR(ISR_Control),
 		.SP_EN(SP_EN),
 		.SNGL(SNGL),
+		// inout
+		.CAS(CAS),
 		// output
-		.CAS_OUT(CAS_OUT),
 		.ID(ID),
 		.Master_Slave(Master_Slave)
 	);
@@ -181,8 +179,7 @@
 		 .WR_flag(WR_flag),
 		 .Ds_from_control(Ds_to_data),
 				
-		 .Ds_IN(D_IN),
-		 .Ds_OUT(D_OUT),
+		 .Ds(D),
 				
 		 .Ds_to_Control(Ds_to_Control),
 		 .RD_flag_control(RD_flag_control),
@@ -209,12 +206,11 @@ module TOP_tb_1();
 	reg A0;
 	reg [7:0] IR;
 	reg INTA;
-	reg [7:0] D_IN;
-	reg [2:0] CAS_IN;
 	reg SP_EN;
+	// inout
+	wire [7:0] D;
+	wire [2:0] CAS;
 	// output
-	wire [7:0] D_OUT;
-	wire [2:0] CAS_OUT;
 	wire INT;
 	
 TOP test (
@@ -225,21 +221,25 @@ TOP test (
 		.A0(A0),
 		.IR(IR),
 		.INTA(INTA),
-		.D_IN(D_IN),
-		.CAS_IN(CAS_IN),
 		.SP_EN(SP_EN),
+		// inout
+		.D(D),
+		.CAS(CAS),
 		// output
-		.D_OUT(D_OUT),
-		.CAS_OUT(CAS_OUT),
 		.INT(INT)
 );
+
+reg [7:0] t_D;
+  assign D = !WR && !CS ? t_D : 8'bz;
+  reg [2:0] t_CAS;
+	assign CAS = !SP_EN? t_CAS : 3'bz ;
 
 
 
 initial begin
    
 	// Initilization ,,,,,, Level triggered
-	D_IN = 8'b00011011; // ICW1 : ICW3 & ICW4
+	t_D = 8'b00011011; // ICW1 : ICW3 & ICW4
 	CS = 1'b0;
 	WR = 1'b0;
 	RD = 1'b1;
@@ -247,19 +247,20 @@ initial begin
     #1000;
     
 	A0 = 1'b1;
-	D_IN = 8'b10101000; // ICW2: 10101 -> vector table
+	t_D = 8'b10101000; // ICW2: 10101 -> vector table
     #1000;
     
-	D_IN = 8'b00000010; // ICW4 : Auto EOI
+	t_D = 8'b00000010; // ICW4 : Auto EOI
     #1000;	
 	
-	D_IN = 8'b10000000; // OCW1 : Mask
+	t_D = 8'b10000000; // OCW1 : Mask
 	#1000
 	
 	// Reading IR
 	IR = 8'b00001000;
 	WR = 1'b1;
-	RD = 1'b0;
+	RD = 1'b1;
+	CS = 1'b1;
 	#1000;
 	
 	// INT
@@ -276,19 +277,17 @@ initial begin
 	#1000;
 	
 	IR = 8'b0;
-  INTA = 1'b0; // END OF INTERRUPT
+    INTA = 1'b0; // END OF INTERRUPT
 	#1000;
 
     $finish;
 end
 
 initial begin
-    $monitor("Time: %t, CS: %b, WR: %b, RD: %b, A0: %b,    IR: %b %b %b %b %b %b %b %b\n SP_EN: %b, INT: %b, INTA: %b,   CAS_IN: %b %b %b, CAS_OUT: %b %b %b,
-    D_IN: %b %b %b %b %b %b %b %b,   D_OUT: %b %b %b %b %b %b %b %b\n",
-    $time,CS,WR,RD,A0,IR[7],IR[6],IR[5],IR[4],IR[3],IR[2],IR[1],IR[0],SP_EN,INT,INTA,CAS_IN[2],CAS_IN[1],CAS_IN[0],CAS_OUT[2],CAS_OUT[1],CAS_OUT[0],
-    D_IN[7],D_IN[6],D_IN[5],D_IN[4],D_IN[3],D_IN[2],D_IN[1],D_IN[0],D_OUT[7],D_OUT[6],D_OUT[5],D_OUT[4],D_OUT[3],D_OUT[2],D_OUT[1],D_OUT[0]);
-    
-
+    $monitor("Time: %t, CS: %b, WR: %b, RD: %b, A0: %b,    IR: %b %b %b %b %b %b %b %b\n SP_EN: %b, INT: %b, INTA: %b,   CAS: %b %b %b,
+    D: %b %b %b %b %b %b %b %b\n",
+    $time,CS,WR,RD,A0,IR[7],IR[6],IR[5],IR[4],IR[3],IR[2],IR[1],IR[0],SP_EN,INT,INTA,CAS[2],CAS[1],CAS[0],
+    D[7],D[6],D[5],D[4],D[3],D[2],D[1],D[0]);
     $timeformat(-9, 1, " ns", 10);
 end
 
@@ -308,12 +307,11 @@ module TOP_tb_2();
 	reg A0;
 	reg [7:0] IR;
 	reg INTA;
-	reg [7:0] D_IN;
-	reg [2:0] CAS_IN;
 	reg SP_EN;
+	// inout
+	wire [7:0] D;
+	wire [2:0] CAS;
 	// output
-	wire [7:0] D_OUT;
-	wire [2:0] CAS_OUT;
 	wire INT;
 	
 TOP test (
@@ -324,16 +322,18 @@ TOP test (
 		.A0(A0),
 		.IR(IR),
 		.INTA(INTA),
-		.D_IN(D_IN),
-		.CAS_IN(CAS_IN),
 		.SP_EN(SP_EN),
+		// inout
+		.D(D),
+		.CAS(CAS),
 		// output
-		.D_OUT(D_OUT),
-		.CAS_OUT(CAS_OUT),
 		.INT(INT)
 );
 
-
+  reg [7:0] t_D;
+  assign D = !WR && !CS ? t_D : 8'bz;
+  reg [2:0] t_CAS;
+	assign CAS = !SP_EN? t_CAS : 3'bz ;
 
 initial begin
    
@@ -342,18 +342,18 @@ initial begin
 	WR = 1'b0;
 	RD = 1'b1;
 	A0 = 1'b0;
-	D_IN = 8'b00011001; // ICW1 : ICW3 & ICW4
+	t_D = 8'b00011001; // ICW1 : ICW3 & ICW4
     #1000;
     
 	A0 = 1'b1;
-	D_IN = 8'b10101001; // ICW2: 10101 -> vector table
+	t_D = 8'b10101001; // ICW2: 10101 -> vector table
     #1000;
     
   A0 = 1'b1;
-	D_IN = 8'b00000010; // ICW3 : Slave : ID -> 2
+	t_D = 8'b00000010; // ICW3 : Slave : ID -> 2
     #1000;	
 	
-	D_IN = 8'b00000010; // ICW4 : Auto EOI
+	t_D = 8'b00000010; // ICW4 : Auto EOI
 	SP_EN = 1'b0; // Slave
 	
     #1000;	
@@ -361,9 +361,10 @@ initial begin
 	// Reading IR
 	IR = 8'b00000100;
 	WR = 1'b1;
-	RD = 1'b0;
+	RD = 1'b1;
+	CS = 1'b1;
 	SP_EN = 1'b0; // Slave
-	CAS_IN = 2;
+	t_CAS = 2;
 	#1000;
 	
 	// INT
@@ -387,10 +388,10 @@ initial begin
 end
 
 initial begin
-    $monitor("Time: %t, CS: %b, WR: %b, RD: %b, A0: %b,    IR: %b %b %b %b %b %b %b %b\n SP_EN: %b, INT: %b, INTA: %b,   CAS_IN: %b %b %b, CAS_OUT: %b %b %b,
-    D_IN: %b %b %b %b %b %b %b %b,   D_OUT: %b %b %b %b %b %b %b %b\n",
-    $time,CS,WR,RD,A0,IR[7],IR[6],IR[5],IR[4],IR[3],IR[2],IR[1],IR[0],SP_EN,INT,INTA,CAS_IN[2],CAS_IN[1],CAS_IN[0],CAS_OUT[2],CAS_OUT[1],CAS_OUT[0],
-    D_IN[7],D_IN[6],D_IN[5],D_IN[4],D_IN[3],D_IN[2],D_IN[1],D_IN[0],D_OUT[7],D_OUT[6],D_OUT[5],D_OUT[4],D_OUT[3],D_OUT[2],D_OUT[1],D_OUT[0]);
+    $monitor("Time: %t, CS: %b, WR: %b, RD: %b, A0: %b,    IR: %b %b %b %b %b %b %b %b\n SP_EN: %b, INT: %b, INTA: %b,   CAS: %b %b %b,
+    D: %b %b %b %b %b %b %b %b\n",
+    $time,CS,WR,RD,A0,IR[7],IR[6],IR[5],IR[4],IR[3],IR[2],IR[1],IR[0],SP_EN,INT,INTA,CAS[2],CAS[1],CAS[0],
+    D[7],D[6],D[5],D[4],D[3],D[2],D[1],D[0]);
     
 
     $timeformat(-9, 1, " ns", 10);
@@ -398,6 +399,11 @@ end
 
 endmodule	
 	
+
+
+
+
+
 
 
 

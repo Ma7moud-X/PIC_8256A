@@ -1,10 +1,99 @@
 # Reading D:/modelsim_ase/tcl/vsim/pref.tcl 
 # OpenFile C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/arch_final.mpf 
 # Loading project arch_final
-# Compile of ISR.v was successful.
-# Compile of Priority_Resolver.v was successful.
-# Compile of Data_Bus.v was successful.
-# Compile of Top.v failed with 1 errors.
-# Compile of Top.v failed with 1 errors.
-# Compile of Cascade.v was successful.
 # Compile of Top.v was successful with warnings.
+vsim -gui work.TOP_tb_2
+# vsim -gui work.TOP_tb_2 
+# Loading work.TOP_tb_2
+# Loading work.TOP
+# Loading work.Cascade_Buffer
+# Loading work.IRR
+# Loading work.Priority_Resolver
+# Loading work.ISR
+# Loading work.IMR
+# Loading work.Read_Write_Logic
+# Loading work.Control_Logic
+# Loading work.Data_bus
+# ** Error: (vsim-3063) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(90): Port 'CAS_IN' not found in the connected module (2nd connection).
+# 
+#         Region: /TOP_tb_2/test/Cascade_Buffer_1
+# ** Error: (vsim-3063) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(90): Port 'CAS_OUT' not found in the connected module (6th connection).
+# 
+#         Region: /TOP_tb_2/test/Cascade_Buffer_1
+# ** Error: (vsim-3389) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(192): Port 'Ds_IN' not found in the connected module (4th connection).
+# 
+#         Region: /TOP_tb_2/test/Data_bus_1
+# ** Error: (vsim-3389) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(192): Port 'Ds_OUT' not found in the connected module (5th connection).
+# 
+#         Region: /TOP_tb_2/test/Data_bus_1
+# ** Fatal: (vsim-3365) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(192): Too many port connections. Expected 7, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /TOP_tb_2/test/Data_bus_1 File: Data_Bus.v
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of Top.v was successful with warnings.
+# Compile of Control.v was successful with warnings.
+# Compile of Top.v was successful with warnings.
+vsim -gui work.TOP_tb_2
+# vsim -gui work.TOP_tb_2 
+# Loading work.TOP_tb_2
+# Loading work.TOP
+# Loading work.Cascade_Buffer
+# Loading work.IRR
+# Loading work.Priority_Resolver
+# Loading work.ISR
+# Loading work.IMR
+# Loading work.Read_Write_Logic
+# Loading work.Control_Logic
+# Loading work.Data_bus
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /TOP_tb_2/test/Cascade_Buffer_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Too few port connections. Expected 26, found 25.
+# 
+#         Region: /TOP_tb_2/test/Control_Logic_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+run -all
+# Time:     0.0 ns, CS: 0, WR: 0, RD: 1, A0: 0,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 1 1 0 0 1
+# 
+# Time:     1.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 1 0 1 0 1 0 0 1
+# 
+# Time:     2.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 0 0 0 1 0
+# 
+# Time:     3.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: 0, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 0 0 0 1 0
+# 
+# Time:     4.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: x,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     6.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 1,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     7.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 0,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     8.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 1,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     9.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 0 0 0
+#  SP_EN: 0, INT: 0, INTA: 0,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# ** Note: $finish    : C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(387)
+#    Time: 10 ns  Iteration: 0  Instance: /TOP_tb_2
+# 1
+# Break in Module TOP_tb_2 at C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v line 387
+quit

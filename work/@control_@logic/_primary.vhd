@@ -36,6 +36,7 @@ entity Control_Logic is
         LTIM            : out    vl_logic;
         INTA_1          : out    vl_logic;
         INTA_FREEZE     : out    vl_logic;
+        INTA_2          : out    vl_logic;
         ID              : in     vl_logic_vector(2 downto 0);
         n               : in     vl_logic_vector(2 downto 0);
         WR_cur          : in     vl_logic_vector(2 downto 0);

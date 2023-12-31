@@ -12,6 +12,7 @@ module Control_Logic (
 	output reg LTIM, // TO IRR, 1 for level 0 for edge
 	output reg INTA_1, // to priority_resolver to set the ist @ the first INTA
 	output reg INTA_FREEZE, //TO IRR duingthe INTA
+	output reg INTA_2, // to Cascade
 	
         input wire [2:0] ID, // from Cascade to compare in case of slave
 	input wire [2:0]n, // from resolver to handel the rotating
@@ -34,7 +35,7 @@ module Control_Logic (
 	reg [1:0] BUFFERED_cur;
 	reg [2:0] My_ID; // from ICW3, My id as a slave
 	reg [7:0] IR_Cascade;
-	reg Higher=1'b0;
+	reg Higher;
 	
 	integer shift;
 
@@ -59,6 +60,7 @@ module Control_Logic (
 	always @* begin
         if (|IRR_resolver) begin // Check if any interrupt is pending
             
+			Higher=1'b0;
 			// check if there is IRR higher than current ISR
 			if (IRR_resolver[(0+shift)%8] && ((0+shift)%8) < ISR) Higher = 1'b1;
 			else if (IRR_resolver[(1+shift)%8] && ((1+shift)%8) < ISR) Higher = 1'b1;
@@ -72,7 +74,7 @@ module Control_Logic (
 			// if AEOI the IST is already reset so no need to wait before new INT
 			// if after waiting for (100 nano in our case) the ISR isn't reset (an EOI didn't occure) that' CPU problem
 			// i'm testing with 30 nano second between steps so i will make the wait to be around 100 nanosecond may change after the test
-			if(EOI_and_Rotate == NON_SPECIFIC_EOI || Higher) begin
+			if(EOI_and_Rotate == NON_SPECIFIC_EOI && Higher) begin
 				INT = 1'b0;
 				#1500; // wait for 1.5 nano then rise the INT to handle the next request 
 				////////////////////////////////////////////////////////////////
@@ -92,6 +94,7 @@ module Control_Logic (
 			    INTA_FREEZE = 1'b1;
 				INTA_NUM = 1'b1;
 				INTA_1 = 1'b1;
+				INTA_2 = 1'b1;
 			end else if (INTA_NUM == 1'b1 && SNGL ) begin // SNGL
 				INTA_NUM = 1'b0;
 				INTA_1 = 1'b0;
@@ -117,6 +120,7 @@ module Control_Logic (
 			 ISR_DONE = ISR;
 		  end
 		  
+		  INTA_2 = 1'b0;
 		  INTA_FREEZE = 1'b0; // unfreeze IRR
 		  INT = 1'b0;
 		end
@@ -230,6 +234,7 @@ module Control_Logic_tb();
 
 
 	// OUTPUT
+	wire INTA_2;
 	wire INT;                  // to CPU
 	wire [7:0] cur_Mask;       // to IMR (OCW1) 
 	wire [7:0]  Ds_to_data;
@@ -261,6 +266,7 @@ Control_Logic test (
 				.RD_flag(RD_flag),
 
 				// OUT
+				.INTA_2(INTA_2),
 				.INT(INT),
 				.cur_Mask(cur_Mask), 
 				.Ds_to_data(Ds_to_data),
@@ -334,12 +340,12 @@ initial begin
   $monitor("Time: %t, WR_cur: %b %b %b,  RD_flag: %b,  NO_ICW4: %b\nIRR: %b %b %b %b %b %b %b %b,  ISR_READ: %b %b %b %b %b %b %b %b, --> Ds_to_data: %b %b %b %b %b %b %b %b  
 	IRR_resolver: %b %b %b %b %b %b %b %b, ISR: %b %b %b,  n: %b %b %b,     INT: %b, INTA: %b\n OUTPUT
 	cur_Mask: %b %b %b %b %b %b %b %b,   ISR_DONE: %b %b %b, EOI_and_Rotate: %b %b %b,     Mask_reset: %b, IRR_reset: %b, ISR_reset: %b, Cascade_reset: %b
-	SNGL: %b, LTIM: %b, INTA_1: %b, INTA_FREEZE: %b",
+	SNGL: %b, LTIM: %b, INTA_1: %b, INTA_FREEZE: %b,    INTA_2: %b ",
 	
 	$time,WR_cur[2],WR_cur[1],WR_cur[0],RD_flag,NO_ICW4,IRR[7],IRR[6],IRR[5],IRR[4],IRR[3],IRR[2],IRR[1],IRR[0],ISR_READ[7],ISR_READ[6],ISR_READ[5],ISR_READ[4],ISR_READ[3],ISR_READ[2],ISR_READ[1],ISR_READ[0],
 	Ds_to_data[7],Ds_to_data[6],Ds_to_data[5],Ds_to_data[4],Ds_to_data[3],Ds_to_data[2],Ds_to_data[1],Ds_to_data[0],IRR_resolver[7],IRR_resolver[6],IRR_resolver[5],IRR_resolver[4],IRR_resolver[3],IRR_resolver[2],
 	IRR_resolver[1],IRR_resolver[0],ISR[2],ISR[1],ISR[0],n[2],n[1],n[0],INT,INTA,cur_Mask[7],cur_Mask[6],cur_Mask[5],cur_Mask[4],cur_Mask[3],cur_Mask[2],cur_Mask[1],cur_Mask[0],
-	ISR_DONE[2],ISR_DONE[1],ISR_DONE[0],EOI_and_Rotate[2],EOI_and_Rotate[1],EOI_and_Rotate[0],Mask_reset,IRR_reset,ISR_reset,Cascade_reset,SNGL,LTIM,INTA_1,INTA_FREEZE
+	ISR_DONE[2],ISR_DONE[1],ISR_DONE[0],EOI_and_Rotate[2],EOI_and_Rotate[1],EOI_and_Rotate[0],Mask_reset,IRR_reset,ISR_reset,Cascade_reset,SNGL,LTIM,INTA_1,INTA_FREEZE,INTA_2
 	);
     
 	
@@ -347,6 +353,7 @@ initial begin
 end
 
 endmodule
+
 
 
 

@@ -8,11 +8,9 @@ entity TOP is
         A0              : in     vl_logic;
         IR              : in     vl_logic_vector(7 downto 0);
         INTA            : in     vl_logic;
-        D_IN            : in     vl_logic_vector(7 downto 0);
-        CAS_IN          : in     vl_logic_vector(2 downto 0);
         SP_EN           : in     vl_logic;
-        D_OUT           : out    vl_logic_vector(7 downto 0);
-        CAS_OUT         : out    vl_logic_vector(2 downto 0);
+        D               : inout  vl_logic_vector(7 downto 0);
+        CAS             : inout  vl_logic_vector(2 downto 0);
         INT             : out    vl_logic
     );
 end TOP;
