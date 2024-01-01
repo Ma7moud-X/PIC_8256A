@@ -114,7 +114,7 @@ initial begin
 	n = 3'b100;
     #1000;
 
-    $finish;
+
 end
 
 initial begin

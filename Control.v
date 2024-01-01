@@ -333,7 +333,6 @@ initial begin
 	ISR = 0;
 	#1000;
 	
-    $finish;
 end
 
 initial begin

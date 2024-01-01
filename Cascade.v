@@ -94,7 +94,6 @@ initial begin
 	t = 4;
     #1000;
        
-    $finish;
 end
 
 initial begin

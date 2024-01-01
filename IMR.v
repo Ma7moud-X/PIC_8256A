@@ -46,7 +46,6 @@ initial begin
 	cur_MASK = 8'b00001111;
     #1000;
     
-    $finish;
 end
 
 initial begin

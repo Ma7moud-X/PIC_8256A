@@ -120,9 +120,8 @@ initial begin
     
     INTA_1 = 1'b1;
     IRR = 8'b01110000;
-    #1000
+    #1000;
 
-    $finish;
 end
 
 initial begin

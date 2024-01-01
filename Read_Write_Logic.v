@@ -170,11 +170,10 @@ initial begin
 	A0 = 1'b0;
 	Ds = 8'b11101111;
     #1000;
-    $finish;
 end
 
 initial begin
-    $monitor("Time: %t, CS: %b, RD: %b, WR: %b, A0: %b,    Ds : %b %b %b %b %b %b %b %b,   OUTPUT   WR_cur:  %b  %b  %b, NO_ICW4: %b, RD_flag: %d, WR_flag: %d" , $time, CS,RD, WR, A0 , Ds[7],Ds[6],Ds[5],Ds[4],Ds[3],Ds[2],Ds[1],Ds[0],WR_cur[2],WR_cur[1],WR_cur[0],NO_ICW4,RD_flag,WR_flag);
+    $monitor("Time: %t, CS: %b, RD: %b, WR: %b, A0: %b,    Ds : %b,   OUTPUT   WR_cur:  %b, NO_ICW4: %b, RD_flag: %d, WR_flag: %d" , $time, CS,RD, WR, A0 , Ds ,WR_cur ,NO_ICW4,RD_flag,WR_flag);
     $timeformat(-9, 1, " ns", 10);
 end
 

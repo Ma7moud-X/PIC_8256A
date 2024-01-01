@@ -280,7 +280,6 @@ initial begin
     INTA = 1'b0; // END OF INTERRUPT
 	#1000;
 
-    $finish;
 end
 
 initial begin
@@ -384,7 +383,6 @@ initial begin
     INTA = 1'b0; // END OF INTERRUPT
 	#1000;
 
-    $finish;
 end
 
 initial begin
