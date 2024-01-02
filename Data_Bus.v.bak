@@ -8,7 +8,7 @@ module Data_bus (
 
 	output reg [7:0] Ds_to_W_R, // D0 - D7 to Write/Read logic
 	output reg [7:0] Ds_to_Control, // D0 - D7 to Control logic
-	output reg RD_flag_control // ask control for data
+	output reg RD_flag_control // ask contrl for data
 		
 );
    
@@ -19,10 +19,16 @@ module Data_bus (
         end else if (WR_flag) begin //seond Ds received from CPU to control and to write/read modules
             Ds_to_Control = Ds;
 			Ds_to_W_R = Ds;
-        end 
+			RD_flag_control = 'b0;
+		end else begin
+			RD_flag_control = 'b0;
+		end
     end
 	
-	assign Ds = RD_flag ? Ds_from_control : 8'bz;
+	   assign Ds = RD_flag ? Ds_from_control : 8'bz;
+
+
+  
 endmodule
 
 
@@ -36,28 +42,28 @@ module Data_bus_tb();
 	//reg [7:0] Ds_IN;
 	//wire [7:0] Ds_OUT;
 	
-	// No need for Ds_to_W_R as it = Ds_from_control	<= what is this??
+	// No need for Ds_to_W_R as it's equal to Ds_to_control
 	wire [7:0] Ds_to_Control;
 	wire RD_flag_control;
 
 
 	Data_bus test (
-					.RD_flag(RD_flag),
-					.WR_flag(WR_flag),
-					.Ds_from_control(Ds_from_control),
-					
-					.Ds(Ds),
-					//.Ds_IN(Ds_IN),
-					//.Ds_OUT(Ds_OUT),
-					
-					.Ds_to_Control(Ds_to_Control),
-					.RD_flag_control(RD_flag_control)
+		.RD_flag(RD_flag),
+		.WR_flag(WR_flag),
+		.Ds_from_control(Ds_from_control),
+		
+		.Ds(Ds),
+		//.Ds_IN(Ds_IN),
+		//.Ds_OUT(Ds_OUT),
+		
+		.Ds_to_Control(Ds_to_Control),
+		.RD_flag_control(RD_flag_control)
 	);
 
 	reg [7:0] t;
 	assign Ds = WR_flag ? t : 8'bz;
 
-  	initial begin
+	initial begin
 		$monitor("Time: %t, RD_flag: %b, WR_flag: %b,   Ds_from_control: %b,   Ds: %b,  RD_flag_control: %b,   Ds_to_Control: %b",
 		$time,
 		RD_flag,
@@ -76,24 +82,21 @@ module Data_bus_tb();
 		// Read
 		WR_flag = 1'b0;
 		RD_flag = 1'b1;
+		t = 'bz;
 		Ds_from_control = 8'b00001111;
 		#10;
 		
 		WR_flag = 1'b0;
 		RD_flag = 1'b1;
+		t = 'bz;
 		Ds_from_control = 8'b11111111;
 		#10;
 
-		// transfering data internally
+		// external bus being used
 		WR_flag = 1'b0;
 		RD_flag = 1'b0;
-		Ds_from_control = 8'b11110000;
+		t = 8'b11110100;
 		#10;
-
-		// something being carried on outside bus
-		WR_flag = 1'b0;
-		RD_flag = 1'b0;
-		t = 8'b11111111;
 	end
 
 endmodule

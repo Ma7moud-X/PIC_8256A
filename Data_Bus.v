@@ -77,26 +77,26 @@ module Data_bus_tb();
 		WR_flag = 1'b1;
 		RD_flag = 1'b0;
 		t = 8'b11110000;
-		#10;
+		#1000;
 		
 		// Read
 		WR_flag = 1'b0;
 		RD_flag = 1'b1;
 		t = 'bz;
 		Ds_from_control = 8'b00001111;
-		#10;
+		#1000;
 		
 		WR_flag = 1'b0;
 		RD_flag = 1'b1;
 		t = 'bz;
 		Ds_from_control = 8'b11111111;
-		#10;
+		#1000;
 
 		// external bus being used
 		WR_flag = 1'b0;
 		RD_flag = 1'b0;
 		t = 8'b11110100;
-		#10;
+		#1000;
 	end
 
 endmodule
