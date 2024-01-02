@@ -280,7 +280,6 @@ initial begin
     INTA = 1'b0; // END OF INTERRUPT
 	#1000;
 
-    $finish;
 end
 
 initial begin
@@ -384,7 +383,6 @@ initial begin
     INTA = 1'b0; // END OF INTERRUPT
 	#1000;
 
-    $finish;
 end
 
 initial begin
@@ -392,6 +390,7 @@ initial begin
     D: %b %b %b %b %b %b %b %b\n",
     $time,CS,WR,RD,A0,IR[7],IR[6],IR[5],IR[4],IR[3],IR[2],IR[1],IR[0],SP_EN,INT,INTA,CAS[2],CAS[1],CAS[0],
     D[7],D[6],D[5],D[4],D[3],D[2],D[1],D[0]);
+    
     
 
     $timeformat(-9, 1, " ns", 10);
