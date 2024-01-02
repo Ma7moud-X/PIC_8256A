@@ -14,3 +14,315 @@
 # Compile of Top.v was successful with warnings.
 # Compile of Top.v was successful with warnings.
 # Compile of Top.v was successful with warnings.
+vsim -gui work.TOP_tb_1
+# vsim -gui work.TOP_tb_1 
+# Loading work.TOP_tb_1
+# Loading work.TOP
+# Loading work.Cascade_Buffer
+# Loading work.IRR
+# Loading work.Priority_Resolver
+# Loading work.ISR
+# Loading work.IMR
+# Loading work.Read_Write_Logic
+# Loading work.Control_Logic
+# Loading work.Data_bus
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /TOP_tb_1/test/Cascade_Buffer_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Too few port connections. Expected 26, found 25.
+# 
+#         Region: /TOP_tb_1/test/Control_Logic_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+run -all
+# Time:     0.0 ns, CS: 0, WR: 0, RD: 1, A0: 0,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 1 1 0 1 1
+# 
+# Time:     1.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 1 0 1 0 1 0 0 0
+# 
+# Time:     2.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 0 0 0 1 0
+# 
+# Time:     3.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 1 0 0 0 0 0 0 0
+# 
+# Time:     4.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 1 0 0 0
+#  SP_EN: x, INT: 1, INTA: x,   CAS: x x x,
+#     D: z z z z z z z z
+# 
+# Time:     6.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 1 0 0 0
+#  SP_EN: x, INT: 1, INTA: 1,   CAS: x x x,
+#     D: z z z z z z z z
+# 
+# Time:     7.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 1 0 0 0
+#  SP_EN: x, INT: 1, INTA: 0,   CAS: x x x,
+#     D: z z z z z z z z
+# 
+# Time:     8.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 1 0 0 0
+#  SP_EN: x, INT: 1, INTA: 1,   CAS: x x x,
+#     D: z z z z z z z z
+# 
+# Time:     9.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 0 0 0
+#  SP_EN: x, INT: 0, INTA: 0,   CAS: x x x,
+#     D: z z z z z z z z
+# 
+vsim -gui work.TOP_tb_2
+# vsim -gui work.TOP_tb_2 
+# Loading work.TOP_tb_2
+# Loading work.TOP
+# Loading work.Cascade_Buffer
+# Loading work.IRR
+# Loading work.Priority_Resolver
+# Loading work.ISR
+# Loading work.IMR
+# Loading work.Read_Write_Logic
+# Loading work.Control_Logic
+# Loading work.Data_bus
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /TOP_tb_2/test/Cascade_Buffer_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(86): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+# ** Warning: (vsim-3017) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Too few port connections. Expected 26, found 25.
+# 
+#         Region: /TOP_tb_2/test/Control_Logic_1
+# ** Warning: (vsim-3722) C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v(175): [TFMPC] - Missing connection for port 'INTA_2'.
+# 
+run -all
+# Time:     0.0 ns, CS: 0, WR: 0, RD: 1, A0: 0,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 1 1 0 0 1
+# 
+# Time:     1.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 1 0 1 0 1 0 0 1
+# 
+# Time:     2.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: x, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 0 0 0 1 0
+# 
+# Time:     3.0 ns, CS: 0, WR: 0, RD: 1, A0: 1,    IR: x x x x x x x x
+#  SP_EN: 0, INT: 0, INTA: x,   CAS: x x x,
+#     D: 0 0 0 0 0 0 1 0
+# 
+# Time:     4.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: x,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     6.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 1,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     7.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 0,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     8.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 1 0 0
+#  SP_EN: 0, INT: 1, INTA: 1,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+# Time:     9.0 ns, CS: 1, WR: 1, RD: 1, A0: 1,    IR: 0 0 0 0 0 0 0 0
+#  SP_EN: 0, INT: 0, INTA: 0,   CAS: 0 1 0,
+#     D: z z z z z z z z
+# 
+vsim -gui work.IMR_tb
+# vsim -gui work.IMR_tb 
+# Loading work.IMR_tb
+# Loading work.IMR
+run -all
+# Time:     0.0 ns, MASK_reset: 1,    cur_MASK: x x x x x x x x,    IMR: 0 0 0 0 0 0 0 0
+# Time:     1.0 ns, MASK_reset: 0,    cur_MASK: 1 1 1 1 0 0 0 0,    IMR: 1 1 1 1 0 0 0 0
+# Time:     2.0 ns, MASK_reset: 0,    cur_MASK: 0 0 0 0 1 1 1 1,    IMR: 0 0 0 0 1 1 1 1
+vsim -gui work.ISR_tb
+# vsim -gui work.ISR_tb 
+# Loading work.ISR_tb
+# Loading work.ISR
+run -all
+# Time:     0.0 ns, ISR_reset: 1,    ISR: 0 0 0 0 0 0 0 0,    ISR_DONE: x x x,   N: x x x,   Rotate: x x x,    OUTPUT    ISR_cur: 0 0 0 0 0 0 0 0,    ISR_Control: 1 1 1
+# Time:     1.0 ns, ISR_reset: 0,    ISR: 0 0 0 0 0 1 1 0,    ISR_DONE: x x x,   N: 0 0 0,   Rotate: x x x,    OUTPUT    ISR_cur: 0 0 0 0 0 1 1 0,    ISR_Control: 0 0 1
+# Time:     2.0 ns, ISR_reset: 0,    ISR: 0 0 0 0 0 1 1 0,    ISR_DONE: 0 0 1,   N: 0 0 0,   Rotate: x x x,    OUTPUT    ISR_cur: 0 0 0 0 0 1 0 0,    ISR_Control: 0 1 0
+# Time:     3.0 ns, ISR_reset: 0,    ISR: 0 0 0 1 1 1 0 0,    ISR_DONE: 0 0 1,   N: 0 1 1,   Rotate: 1 0 0,    OUTPUT    ISR_cur: 0 0 0 1 1 1 0 0,    ISR_Control: 0 1 1
+# Time:     4.0 ns, ISR_reset: 0,    ISR: 0 0 0 1 1 1 0 0,    ISR_DONE: 0 1 1,   N: 1 0 0,   Rotate: 1 0 0,    OUTPUT    ISR_cur: 0 0 0 1 1 1 0 0,    ISR_Control: 1 0 0
+vsim -gui work.IRR_tb
+# vsim -gui work.IRR_tb 
+# Loading work.IRR_tb
+# Loading work.IRR
+run -all
+# Time:     0.0 ns, reset: 1, LTIM: 1, INTA_FREEZE: 0      IRR: x x x x x x x x,      IRR_control: 0 0 0 0 0 0 0 0
+# Time:     1.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 0      IRR: 1 1 1 1 1 1 1 1,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     2.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 0      IRR: 0 0 0 0 1 1 1 1,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     3.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 0      IRR: 1 1 1 1 0 0 0 0,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     4.0 ns, reset: 0, LTIM: 0, INTA_FREEZE: 0      IRR: 0 0 0 0 0 0 0 0,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     5.0 ns, reset: 0, LTIM: 0, INTA_FREEZE: 0      IRR: 1 1 1 1 0 0 0 0,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     6.0 ns, reset: 0, LTIM: 0, INTA_FREEZE: 0      IRR: 1 1 0 0 0 0 0 0,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     7.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 0      IRR: 1 1 1 1 1 1 0 0,      IRR_control: 1 1 1 1 1 1 1 1
+# Time:     8.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 0      IRR: 0 0 0 0 0 0 0 0,      IRR_control: 0 0 0 0 1 1 1 1
+# Time:     9.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 1      IRR: 1 1 1 1 1 1 1 1,      IRR_control: 0 0 0 0 1 1 1 1
+# Time:    10.0 ns, reset: 0, LTIM: 1, INTA_FREEZE: 1      IRR: 0 0 0 0 1 1 1 1,      IRR_control: 0 0 0 0 1 1 1 1
+vsim -gui work.Priority_Resolver_tb
+# vsim -gui work.Priority_Resolver_tb 
+# Loading work.Priority_Resolver_tb
+# Loading work.Priority_Resolver
+run -all
+# Time:     0.0 ns, reset: 1, INTA_1: 0,    IRR: 0 0 0 0 0 0 0 0,    IMR: 0 0 0 0 0 0 0 0,    Rotate: x x x    OUTPUT   n: 0 0 0,    ISR_IRR: 1 0 0 0 0 0 0 0,    IRR_MASKED: 0 0 0 0 0 0 0 0
+# Time:     1.0 ns, reset: 0, INTA_1: 0,    IRR: 1 1 1 1 0 0 0 0,    IMR: 1 1 0 0 0 0 0 0,    Rotate: x x x    OUTPUT   n: 0 0 0,    ISR_IRR: 1 0 0 0 0 0 0 0,    IRR_MASKED: 0 0 1 1 0 0 0 0
+# Time:     2.0 ns, reset: 0, INTA_1: 1,    IRR: 1 1 1 1 0 0 0 0,    IMR: 1 0 0 0 0 0 0 0,    Rotate: x x x    OUTPUT   n: 0 0 0,    ISR_IRR: 0 0 0 1 0 0 0 0,    IRR_MASKED: 0 1 1 1 0 0 0 0
+# Time:     3.0 ns, reset: 0, INTA_1: 0,    IRR: 1 1 1 1 0 0 0 0,    IMR: 1 0 0 0 0 0 0 0,    Rotate: x x x    OUTPUT   n: 0 0 0,    ISR_IRR: 0 0 0 1 0 0 0 0,    IRR_MASKED: 0 1 1 1 0 0 0 0
+# Time:     4.0 ns, reset: 0, INTA_1: 0,    IRR: 1 1 1 1 0 0 0 0,    IMR: 1 0 0 0 0 0 0 0,    Rotate: 1 0 0    OUTPUT   n: 1 0 1,    ISR_IRR: 0 0 0 1 0 0 0 0,    IRR_MASKED: 0 1 1 1 0 0 0 0
+# Time:     5.0 ns, reset: 0, INTA_1: 1,    IRR: 0 1 1 1 0 0 0 0,    IMR: 1 0 0 0 0 0 0 0,    Rotate: 1 0 0    OUTPUT   n: 1 1 0,    ISR_IRR: 0 0 1 0 0 0 0 0,    IRR_MASKED: 0 1 1 1 0 0 0 0
+vsim -gui work.Data_bus_tb
+# vsim -gui work.Data_bus_tb 
+# Loading work.Data_bus_tb
+# Loading work.Data_bus
+# ** Warning: (vsim-3017) Data_Bus.v(61): [TFMPC] - Too few port connections. Expected 7, found 6.
+# 
+#         Region: /Data_bus_tb/test
+# ** Warning: (vsim-3722) Data_Bus.v(61): [TFMPC] - Missing connection for port 'Ds_to_W_R'.
+# 
+run -all
+# Time:                    0, RD_flag: 0, WR_flag: 1,   Ds_from_control: xxxxxxxx,   Ds: 11110000,  RD_flag_control: 0,   Ds_to_Control: 11110000
+# Time:                 1000, RD_flag: 1, WR_flag: 0,   Ds_from_control: 00001111,   Ds: 00001111,  RD_flag_control: 1,   Ds_to_Control: 11110000
+# Time:                 2000, RD_flag: 1, WR_flag: 0,   Ds_from_control: 11111111,   Ds: 11111111,  RD_flag_control: 1,   Ds_to_Control: 11110000
+# Time:                 3000, RD_flag: 0, WR_flag: 0,   Ds_from_control: 11111111,   Ds: zzzzzzzz,  RD_flag_control: 0,   Ds_to_Control: 11110000
+vsim -gui work.Data_bus_tb
+# vsim -gui work.Data_bus_tb 
+# Loading work.Data_bus_tb
+# Loading work.Data_bus
+# ** Warning: (vsim-3017) Data_Bus.v(61): [TFMPC] - Too few port connections. Expected 7, found 6.
+# 
+#         Region: /Data_bus_tb/test
+# ** Warning: (vsim-3722) Data_Bus.v(61): [TFMPC] - Missing connection for port 'Ds_to_W_R'.
+# 
+vsim -gui work.Read_Write_Logic_tb
+# vsim -gui work.Read_Write_Logic_tb 
+# Loading work.Read_Write_Logic_tb
+# Loading work.Read_Write_Logic
+run -all
+# Time:     0.0 ns, CS: 1, RD: 1, WR: 1, A0: x,    Ds : 00000000,   OUTPUT   WR_cur:  xxx, NO_ICW4: x, RD_flag: x, WR_flag: x
+# Time:     1.0 ns, CS: 0, RD: 0, WR: 1, A0: x,    Ds : 00000000,   OUTPUT   WR_cur:  xxx, NO_ICW4: x, RD_flag: 1, WR_flag: 0
+# Time:     2.0 ns, CS: 0, RD: 1, WR: 0, A0: 0,    Ds : 00010011,   OUTPUT   WR_cur:  000, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+# Time:     3.0 ns, CS: 0, RD: 1, WR: 0, A0: 1,    Ds : 00010000,   OUTPUT   WR_cur:  001, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+# Time:     4.0 ns, CS: 0, RD: 1, WR: 0, A0: 1,    Ds : 11111111,   OUTPUT   WR_cur:  011, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+# Time:     5.0 ns, CS: 0, RD: 1, WR: 0, A0: 1,    Ds : 00010011,   OUTPUT   WR_cur:  100, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+# Time:     6.0 ns, CS: 0, RD: 1, WR: 0, A0: 0,    Ds : 00000000,   OUTPUT   WR_cur:  101, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+# Time:     7.0 ns, CS: 0, RD: 1, WR: 0, A0: 0,    Ds : 11101111,   OUTPUT   WR_cur:  110, NO_ICW4: 0, RD_flag: 0, WR_flag: 1
+vsim -gui work.Cascade_Buffer_tb
+# vsim -gui work.Cascade_Buffer_tb 
+# Loading work.Cascade_Buffer_tb
+# Loading work.Cascade_Buffer
+run -all
+# Time:     0.0 ns, Cascade_reset: 1, SNGL: x, SP_EN: x,   ISR: x x x,  INOUT  CAS: z z z   OUTPUT  Master_Slave: x,   ID:  1 1 1
+# Time:     1.0 ns, Cascade_reset: 0, SNGL: 1, SP_EN: 1,   ISR: x x x,  INOUT  CAS: z z z   OUTPUT  Master_Slave: x,   ID:  1 1 1
+# Time:     2.0 ns, Cascade_reset: 0, SNGL: 0, SP_EN: 1,   ISR: 0 1 1,  INOUT  CAS: x x x   OUTPUT  Master_Slave: 1,   ID:  1 1 1
+# Time:     3.0 ns, Cascade_reset: 0, SNGL: 0, SP_EN: 0,   ISR: 0 1 1,  INOUT  CAS: 1 0 0   OUTPUT  Master_Slave: 0,   ID:  1 0 0
+vsim -gui work.Control_Logic_tb
+# vsim -gui work.Control_Logic_tb 
+# Loading work.Control_Logic_tb
+# Loading work.Control_Logic
+run -all
+# Time:     0.0 ns, WR_cur: 0 0 0,  RD_flag: 0,  NO_ICW4: 0
+# IRR: x x x x x x x x,  ISR_READ: x x x x x x x x, --> Ds_to_data: x x x x x x x x  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 0 0,   ISR_DONE: x x x, EOI_and_Rotate: x x x,     Mask_reset: 1, IRR_reset: 1, ISR_reset: 1, Cascade_reset: 1
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     1.0 ns, WR_cur: 0 0 1,  RD_flag: 0,  NO_ICW4: 0
+# IRR: x x x x x x x x,  ISR_READ: x x x x x x x x, --> Ds_to_data: x x x x x x x x  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 0 0,   ISR_DONE: x x x, EOI_and_Rotate: x x x,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     2.0 ns, WR_cur: 0 1 1,  RD_flag: 0,  NO_ICW4: 0
+# IRR: x x x x x x x x,  ISR_READ: x x x x x x x x, --> Ds_to_data: x x x x x x x x  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 0 0,   ISR_DONE: x x x, EOI_and_Rotate: x x x,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     3.0 ns, WR_cur: 1 0 0,  RD_flag: 0,  NO_ICW4: 0
+# IRR: x x x x x x x x,  ISR_READ: x x x x x x x x, --> Ds_to_data: x x x x x x x x  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: x x x,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     4.0 ns, WR_cur: 1 0 1,  RD_flag: 0,  NO_ICW4: 0
+# IRR: x x x x x x x x,  ISR_READ: x x x x x x x x, --> Ds_to_data: x x x x x x x x  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     5.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 0 0 0 0 0 1 1 0  
+# 
+# 	IRR_resolver: x x x x x x x x, ISR: x x x,  n: x x x,     INT: 0, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     6.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 0 0 0 0 0 1 1 0  
+# 
+# 	IRR_resolver: 0 0 0 0 0 1 0 0, ISR: 0 1 0,  n: 0 0 0,     INT: 1, INTA: x
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: x, INTA_FREEZE: 0,    INTA_2: x 
+# Time:     7.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 0 0 0 0 0 1 1 0  
+# 
+# 	IRR_resolver: 0 0 0 0 0 1 0 0, ISR: 0 1 0,  n: 0 0 0,     INT: 1, INTA: 1
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: 1, INTA_FREEZE: 1,    INTA_2: 1 
+# Time:     8.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 0 0 0 0 0 1 1 0  
+# 
+# 	IRR_resolver: 0 0 0 0 0 1 0 0, ISR: 0 1 0,  n: 0 0 0,     INT: 1, INTA: 0
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: 1, INTA_FREEZE: 1,    INTA_2: 1 
+# Time:     9.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 1 0 1 0 1 0 1 0  
+# 
+# 	IRR_resolver: 0 0 0 0 0 1 0 0, ISR: 0 1 0,  n: 0 0 0,     INT: 1, INTA: 1
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: x x x, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: 0, INTA_FREEZE: 1,    INTA_2: 1 
+# Time:    10.0 ns, WR_cur: 1 0 1,  RD_flag: 1,  NO_ICW4: 0
+# IRR: 0 0 0 0 0 1 1 0,  ISR_READ: x x x x x x x x, --> Ds_to_data: 1 0 1 0 1 0 1 0  
+# 
+# 	IRR_resolver: 0 0 0 0 0 0 0 0, ISR: 0 0 0,  n: 0 0 0,     INT: 0, INTA: 0
+#  OUTPUT
+# 
+# 	cur_Mask: 0 0 0 0 0 0 1 0,   ISR_DONE: 0 0 0, EOI_and_Rotate: 0 1 0,     Mask_reset: 0, IRR_reset: 0, ISR_reset: 0, Cascade_reset: 0
+# 
+# 	SNGL: 1, LTIM: 1, INTA_1: 0, INTA_FREEZE: 0,    INTA_2: 0 

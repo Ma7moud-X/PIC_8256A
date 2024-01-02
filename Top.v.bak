@@ -156,7 +156,7 @@
 		 .Master_Slave(Master_Slave),
 		 .NO_ICW4(NO_ICW4),
 		 .INTA(INTA),
-		 .RD_flag(RD_flag),
+		 .RD_flag(RD_flag_control),
 
 		 // OUT
 		 .INT(INT),

@@ -66,7 +66,9 @@
 		wire SNGL;                 // to Cascade if 1 sngl if 0 cascade
 		wire LTIM;                 // TO IRR, 1 for level 0 for edge
 		wire INTA_1;               // to priority_resolver to set the ist @ the first INTA
+		wire INTA_2;
 		wire INTA_FREEZE;
+		
 
 
 		
@@ -78,6 +80,7 @@
 		.ISR(ISR_Control),
 		.SP_EN(SP_EN),
 		.SNGL(SNGL),
+		.INTA_2(INTA_2),
 		// inout
 		.CAS(CAS),
 		// output
@@ -171,6 +174,7 @@
 		 .SNGL(SNGL),
 		 .LTIM(LTIM),
 		 .INTA_1(INTA_1),
+		 .INTA_2(INTA_2),
 		 .INTA_FREEZE(INTA_FREEZE)
     );
 
@@ -398,6 +402,7 @@ end
 
 endmodule	
 	
+
 
 
 

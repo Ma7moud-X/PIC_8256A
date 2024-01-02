@@ -9,7 +9,7 @@ Z1 !s100 X6mAc6P44@[GLDQLXm[:=0
 Z2 I?N2<[gP_>7Ud7B=g?AW3c3
 Z3 VOh_3KcJjNg50d8;8JJM<j0
 Z4 dC:\Users\MAHMOUD\Desktop\Project\PIC_8256A
-Z5 w1704199507
+Z5 w1704206951
 Z6 FCascade.v
 Z7 8C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v
 Z8 FC:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v
@@ -18,7 +18,7 @@ Z9 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z10 !s108 1704199510.723000
+Z10 !s108 1704206955.239000
 Z11 !s107 Cascade.v|Data_Bus.v|Read_Write_Logic.v|Control.v|IMR.v|ISR.v|Priority_Resolver.v|IRR.v|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v|
 Z12 !s90 -reportprogress|300|-work|work|C:/Users/MAHMOUD/Desktop/Project/PIC_8256A/Top.v|
 !s101 -O0
@@ -341,8 +341,8 @@ R13
 Z82 n@read_@write_@logic_tb
 vTOP
 !i10b 1
-Z83 !s100 a_[^;ndo;]QF_bfogPeJL2
-Z84 IYSlco3Cc8:`kC^]nfJTgA0
+Z83 !s100 RZOI6U=Z6g?hXSc@mITXW1
+Z84 I5I7m^0U>[@DOYJ4AT<MIU0
 Z85 V0WVMVBOPU3a0ezEbcEdoc1
 R4
 R5
@@ -361,14 +361,14 @@ R13
 Z86 n@t@o@p
 vTOP_tb_1
 !i10b 1
-Z87 !s100 HjR1X1VhQ97E@:KWB>;o[3
-Z88 I2L;oFLC2Bj=]3zSWcE:9b1
+Z87 !s100 >=I_Gjkgn3`Y3I?HZ^fTO3
+Z88 I1aIT77KEbGGUMIdF[D<4i3
 Z89 VgGj^P`4?XOnUZ;1OELBHW1
 R4
 R5
 R7
 R8
-Z90 L0 200
+Z90 L0 204
 R9
 r1
 !s85 0
@@ -381,14 +381,14 @@ R13
 Z91 n@t@o@p_tb_1
 vTOP_tb_2
 !i10b 1
-Z92 !s100 >zg78HbX2EXRRZKZblg4G2
-Z93 IM;dfk@ED6LiJnEz5BSZ=T3
+Z92 !s100 bFMIL6VN3GDz<3o8jE^QS2
+Z93 IBA]>04CMdMzFc2kEf]H@=2
 Z94 VFMh2bI_eIM0L5eQeRoNK]3
 R4
 R5
 R7
 R8
-Z95 L0 300
+Z95 L0 304
 R9
 r1
 !s85 0
